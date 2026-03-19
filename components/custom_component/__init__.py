@@ -28,4 +28,4 @@ async def to_code(config):
     var = cg.variable(config[CONF_ID], rhs)
     for i, conf in enumerate(config.get(CONF_COMPONENTS, [])):
         comp = cg.Pvariable(conf[CONF_ID], var.get_component(i))
-        await cg.register_component(comp, conf)
+        await cg.register_component_(comp, conf)
